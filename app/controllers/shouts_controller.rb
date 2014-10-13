@@ -8,6 +8,7 @@ class ShoutsController < ApplicationController
   def create
     @shout = Shout.new(shout_params)
     @shout.user_id = current_user.id
+    @shout.save
     redirect_to shouts_path
   end
   private

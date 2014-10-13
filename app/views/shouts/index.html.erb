@@ -1,4 +1,6 @@
+<h2> SHOUTS </h2>
 <ul>
-<li>Hi there</li>
-<li>CAN YOU HEAR ME NOW</li>
+  <% @shouts.each do |shout| %>
+    <li><%= shout.body %></li>
+  <% end %>
 </ul>

@@ -6,13 +6,11 @@ class ShoutsController < ApplicationController
   end
 
   def create
-    @shout = Shout.new(shout_params)
-    @shout.user_id = current_user.id
-    @shout.save
+    current_user.shouts.create(shout_params)
     redirect_to shouts_path
   end
   private
   def shout_params
-    params.require(:shout).permit(:user_id, :body)
+    params.require(:shout).permit(:body)
   end
 end

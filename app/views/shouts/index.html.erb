@@ -5,21 +5,9 @@
   <%= form.text_field :body %>
   <%= form.submit "SHOUT!" %>
 <% end %>
-<h5>Followed Users</h5>
-<div>
-  <ul>
-    <%= render @users_i_follow %>
-  </ul>
-</div>
-<h5> Unfollowed Users </h5>
-<div>
-  <ul>
-    <%= render @users_i_do_not_follow %>
-  </ul>
-</div>
 <h5>Your feed</h5>
+<div id="feed">
 <ul>
-  <% @shouts.each do |shout| %>
-    <li><strong><%= shout.user.email %></strong> - <%= shout.body %></li>
-  <% end %>
+  <%= render @shouts %>
 </ul>
+</div>

@@ -20,6 +20,6 @@
 <h5>Your feed</h5>
 <ul>
   <% @shouts.each do |shout| %>
-    <li><%= shout.user_id %> - <%= shout.body %></li>
+    <li><strong><%= shout.user.email %></strong> - <%= shout.body %></li>
   <% end %>
 </ul>

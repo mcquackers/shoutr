@@ -1,12 +1,11 @@
 class ShoutsController < ApplicationController
   before_action :require_login
   def index
-    @users = User.all
     @shout = Shout.new
-    @shouts = Shout.all
     @following_relationship = FollowingRelationship.new
     @users_i_follow = current_user.followed_users
     @users_i_do_not_follow = User.where.not(id: current_user.followed_user_ids).where.not(id: current_user.id)
+    @shouts = current_user.timeline
   end
 
   def create

@@ -15,6 +15,11 @@ class User < ActiveRecord::Base
     followed_users << user_to_follow
   end
 
+  def timeline
+    timeline_user_ids = followed_user_ids + [id]
+    Shout.where(user_id: timeline_user_ids).order(created_at: :desc).limit(20)
+  end
+
   def unfollow(user_to_unfollow)
     followed_users.destroy(user_to_unfollow)
   end

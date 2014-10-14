@@ -17,8 +17,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    my_id = current_user.id
-    @users = User.where.not(id: my_id)
+    @users = User.all
     @following_relationship = FollowingRelationship.new
   end
 

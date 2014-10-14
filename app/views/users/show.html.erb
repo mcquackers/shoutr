@@ -1,0 +1,6 @@
+<h1>Viewing <%= @user.email %>'s profile</h1>
+<h2>Users <%= @user.email %> is following</h2>
+<%= render @followed_users %>
+
+<h2>Users following <%= @user.email %></h2>
+<%= render @followers %>

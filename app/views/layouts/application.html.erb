@@ -6,13 +6,18 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <style>
-    h4{
+    .session{
       float: right;
     }
   </style>
 </head>
 <body>
-  <h4>
+  <nav>
+    <ul>
+      <li><%= link_to "Users", users_path %></li>
+    </ul>
+  </nav>
+  <header class="session">
   <% if signed_in? %>
     <%= current_user.email %>
     <%= button_to "Sign out", session_path, method: :delete %>
@@ -20,7 +25,7 @@
     <%= link_to "Sign in", new_session_path %>
     <%= link_to "Sign up", new_user_path %>
   <% end %>
-  </h4>
+  </header>
 
 <%= yield %>
 

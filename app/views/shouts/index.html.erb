@@ -5,6 +5,23 @@
   <%= form.text_field :body %>
   <%= form.submit "SHOUT!" %>
 <% end %>
+<h5>Followed Users</h5>
+<div>
+  <ul>
+    <% @users_i_follow.each do |user| %>
+      <li><%= user.email %> </li>
+    <% end %>
+  </ul>
+</div>
+<h5> Unfollowed Users </h5>
+<div>
+  <ul>
+    <% @users_i_do_not_follow.each do |user| %>
+      <li><%= user.email %>-<%= button_to "Follow", [user, :following_relationship] %></li>
+    <% end %>
+  </ul>
+</div>
+<h5>Your feed</h5>
 <ul>
   <% @shouts.each do |shout| %>
     <li><%= shout.user_id %> - <%= shout.body %></li>

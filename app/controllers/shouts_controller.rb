@@ -3,7 +3,7 @@ class ShoutsController < ApplicationController
   def index
     @text_subject = TextSubject.new
     @image_subject = ImageSubject.new
-    @shouts = current_user.timeline
+    @timeline = current_user.timeline.page(params[:page]).per(5)
     @subject = @text_subject
   end
 

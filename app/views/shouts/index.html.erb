@@ -15,6 +15,7 @@
 <h5>Your feed</h5>
 <div id="feed">
 <ul>
-  <%= render @shouts %>
+  <%= render @timeline %>
+  <%= paginate @timeline %>
 </ul>
 </div>

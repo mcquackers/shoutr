@@ -1,6 +1,9 @@
 <li>
   <div class="shout">
     <strong><%= shout.user.email %></strong>
-    <%= time_ago_in_words shout.created_at %> ago - <%= shout.body %>
+      <%#shout.subject_id = text_subject.id
+      shout.subject_type = "TextSubject"
+      shout.save %>
+    <%= time_ago_in_words shout.created_at %> ago - <%= shout.subject.body %>
   </div>
 </li>

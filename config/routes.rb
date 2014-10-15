@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   root "shouts#index"
-  resources :shouts, only: [:create, :index]
+  resources :text_subjects, only: [:create]
+  resources :shouts, only: [:index]
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :index, :show] do
     resource :following_relationship, only: [:create, :destroy]

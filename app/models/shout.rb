@@ -1,6 +1,6 @@
 class Shout < ActiveRecord::Base
   belongs_to :user
-
-  validates :body, presence: true
+  belongs_to :subject, polymorphic: true
   validates :user_id, presence: true
+  validates :subject, presence: true
 end

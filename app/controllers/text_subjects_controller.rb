@@ -6,6 +6,7 @@ class TextSubjectsController < ApplicationController
       redirect_to root_path
     else
       @shouts = current_user.timeline
+      @subject = @text_subject
       render "shouts/index"
     end
   end

@@ -1,10 +1,17 @@
 <h2> SHOUTS </h2>
-<%= render "error_messages", target: @text_subject %>
+<%= render "error_messages", target: @subject %>
 <%= form_for @text_subject do |form| %>
   <%= form.label "SHOUT!" %>
   <%= form.text_field :body %>
   <%= form.submit "SHOUT!" %>
 <% end %>
+
+<%= form_for @image_subject do |form| %>
+  <%= form.label "SHOUT!" %>
+  <%= form.text_field :url %>
+  <%= form.submit "IMAGE SHOUT!" %>
+<% end %>
+
 <h5>Your feed</h5>
 <div id="feed">
 <ul>

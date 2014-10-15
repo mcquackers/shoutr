@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root "shouts#index"
   resources :text_subjects, only: [:create]
+  resources :image_subjects, only: [:create]
+  resources :followers, only: [:index]
   resources :shouts, only: [:index]
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :index, :show] do

@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
   def show
     query = params[:query]
-    user_search = User.where("email ILIKE ?", "%#{query}%")
+    user_search = User.where("username ILIKE ?", "%#{query}%")
     text_search = TextSubject.where("body ILIKE ?", "%#{query}%").map do |subject|
       subject.shout
     end

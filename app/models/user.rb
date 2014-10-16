@@ -10,9 +10,14 @@ class User < ActiveRecord::Base
   has_many :followers, through: :follower_relationships
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
+  validates :username, presence: true, uniqueness: true
 
   def follow(user_to_follow)
     followed_users << user_to_follow
+  end
+
+  def to_param
+    username
   end
 
   def timeline

@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'pry', group: :development
 gem 'kaminari'
 gem 'sass'
 gem 'monban-generators'

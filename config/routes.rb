@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resource :search, only: [:show]
   resources :shouts, only: [:index]
   resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create, :index, :show] do
+  resources :users, only: [:new, :create, :index] do
     resource :following_relationship, only: [:create, :destroy]
   end
+  get ':username', to: "users#show", as: :user
 end

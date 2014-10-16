@@ -5,8 +5,9 @@ class TextSubjectsController < ApplicationController
       current_user.shouts.create(subject: @text_subject)
       redirect_to root_path
     else
-      @shouts = current_user.timeline
+      @timeline = current_user.timeline.page(params[:page]).per(5)
       @subject = @text_subject
+      @image_subject = ImageSubject.new
       render "shouts/index"
     end
   end

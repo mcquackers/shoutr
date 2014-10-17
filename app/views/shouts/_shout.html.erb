@@ -2,5 +2,8 @@
   <div class="shout">
     <%= show_gravatar(shout.user.email) %>
     <%= time_ago_in_words shout.created_at %> ago - <%= render shout.subject %>
+    <div class="reshout">
+      <%= button_to "re:shout", reshout_subjects_path(shout_id: shout.id) %>
+    </div>
   </div>
 </li>
